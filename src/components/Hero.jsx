@@ -33,7 +33,7 @@ export default function Hero() {
                         Presenting to you the best online learning platform your child will ever need to fully invest in their learning journey
                     </p>
                     <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:text-[17px] transition">
-                        <div className="font-bold ">Join Crafted</div>
+                        <div className="font-bold ">Book Free Demo</div>
                     </button>
                 </div>
 
