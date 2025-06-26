@@ -32,8 +32,8 @@ export default function Hero() {
                     <p className="text-gray-700 text-lg max-w-md">
                         Presenting to you the best online learning platform your child will ever need to fully invest in their learning journey
                     </p>
-                    <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:text-[17px] transition">
-                        <div className="font-bold ">Book Free Demo</div>
+                    <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:text-[22px] transition">
+                        <div className="font-semibold text-xl font-baloo ">Book Free Demo</div>
                     </button>
                 </div>
 

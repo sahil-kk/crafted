@@ -1,52 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
 const Team = () => {
-    const facultyData = [
-        {
-            name: "Suhail K K",
-            role: "Chemistry Faculty",
-            college: "CUSAT",
-            image: "https://placehold.co/300x300?text=Suhail+K+K",
-        },
-        {
-            name: "Shayar",
-            role: "Physics Faculty",
-            college: "Pondichery University",
-            image: "https://placehold.co/300x300?text=Shayar",
-        },
-        {
-            name: "Faseel P",
-            role: "Physics Faculty",
-            college: "CUSAT",
-            image: "https://placehold.co/300x300?text=Faseel+P",
-        },
-        {
-            name: "Dheeraj",
-            role: "Maths Faculty",
-            college: "Pondichery University",
-            image: "https://placehold.co/300x300?text=Dheeraj",
-        },
-        {
-            name: "Roshan",
-            role: "Physics Faculty",
-            college: "IISER Bhopal",
-            image: "https://placehold.co/300x300?text=Roshan",
-        },
-        {
-            name: "Sinan",
-            role: "Maths Faculty",
-            college: "IIT Kharagpur",
-            image: "https://placehold.co/300x300?text=Sinan",
-        },
-    ];
-
-    const extendedFacultyData = [...facultyData, ...facultyData];
-
+    const [facultyData, setFacultyData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(true);
     const [cardsToShow, setCardsToShow] = useState(4);
-
     const intervalRef = useRef(null);
+
+    // 👇 Fetch data from Django REST API
+    useEffect(() => {
+        fetch("http://127.0.0.1:8000/api/faculties/") // Replace with your actual endpoint
+            .then((res) => res.json())
+            .then((data) => setFacultyData(data))
+            .catch((err) => console.error("Error fetching faculty data:", err));
+    }, []);
+
+    const extendedFacultyData = [...facultyData, ...facultyData];
 
     useEffect(() => {
         const handleResize = () => {
@@ -55,25 +24,17 @@ const Team = () => {
 
         handleResize();
         window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     useEffect(() => {
         startAutoScroll();
-
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [cardsToShow]);
+        return () => intervalRef.current && clearInterval(intervalRef.current);
+    }, [cardsToShow, facultyData]);
 
     const startAutoScroll = () => {
         if (intervalRef.current) clearInterval(intervalRef.current);
-        intervalRef.current = setInterval(() => {
-            next();
-        }, 2500);
+        intervalRef.current = setInterval(next, 2500);
     };
 
     const next = () => {
@@ -107,35 +68,23 @@ const Team = () => {
         restartAutoScroll();
     };
 
-    const restartAutoScroll = () => {
-        startAutoScroll();
-    };
+    const restartAutoScroll = () => startAutoScroll();
 
     return (
         <div className="relative border bg-white min-h-screen py-16 px-4">
             <div className="max-w-7xl mx-auto relative">
-                <h1 id='team' className="text-5xl font-semibold font-baloo text-center mb-12 text-gray-800">
+                <h1 id="team" className="text-5xl font-semibold font-baloo text-center mb-12 text-gray-800">
                     Meet our Faculties
                 </h1>
 
-                {/* Arrows at Bottom Left */}
+                {/* Arrows */}
                 <div className="absolute bottom-4 left-1/2 transform translate-y-[90px] -translate-x-1/2 flex gap-4 z-10">
                     <button
                         onClick={prev}
                         className="border border-gray-700 p-2 rounded-full hover:bg-black hover:text-white transition"
                         aria-label="Previous slide"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="55"
-                            height="55"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M15 18l-6-6 6-6" />
                         </svg>
                     </button>
@@ -144,17 +93,7 @@ const Team = () => {
                         className="border border-gray-700 p-2 rounded-full hover:bg-black hover:text-white transition"
                         aria-label="Next slide"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="55"
-                            height="55"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M9 18l6-6-6-6" />
                         </svg>
                     </button>
@@ -166,9 +105,7 @@ const Team = () => {
                         className={`flex transition-transform duration-1000 ease-in-out ${
                             isTransitioning ? "transition-transform" : "transition-none"
                         }`}
-                        style={{
-                            transform: `translateX(-${(currentIndex * 100) / cardsToShow}%)`,
-                        }}
+                        style={{ transform: `translateX(-${(currentIndex * 100) / cardsToShow}%)` }}
                     >
                         {extendedFacultyData.map((faculty, index) => (
                             <div
@@ -179,13 +116,13 @@ const Team = () => {
                             >
                                 <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 h-full">
                                     <img
-                                        src={faculty.image}
+                                        src={faculty.image_url}
                                         alt={faculty.name}
                                         className="w-full h-76 object-cover"
                                     />
                                     <div className="text-center p-4">
                                         <h2 className="text-[26px] font-semibold text-gray-800">{faculty.name}</h2>
-                                        <p className="text-m text-orange-600 mt-1">{faculty.role}</p>
+                                        <p className="text-m text-orange-600 mt-1">{faculty.subject}</p>
                                         <p className="text-m text-gray-500 mt-1">{faculty.college}</p>
                                     </div>
                                 </div>
