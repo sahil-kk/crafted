@@ -9,7 +9,7 @@ const Team = () => {
 
     // 👇 Fetch data from Django REST API
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/faculties/") // Replace with your actual endpoint
+        fetch("https://crafted-backend-p7es.onrender.com/api/faculties/") // Replace with your actual endpoint
             .then((res) => res.json())
             .then((data) => setFacultyData(data))
             .catch((err) => console.error("Error fetching faculty data:", err));
