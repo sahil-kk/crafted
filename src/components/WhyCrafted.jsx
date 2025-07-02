@@ -1,6 +1,6 @@
 const WhyCrafted = () => {
     return (
-        <section className="bg-gradient-to-b from-white to-orange-100 mt-30 py-32  px-6">
+        <section className="bg-white mt-30 py-32  px-6">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl md:text-5xl font-baloo font-semibold text-gray-900 mb-16">Why Craft<span className="text-orange-500">ed.</span></h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-5">

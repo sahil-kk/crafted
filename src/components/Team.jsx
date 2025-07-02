@@ -71,9 +71,9 @@ const Team = () => {
     const restartAutoScroll = () => startAutoScroll();
 
     return (
-        <div className="relative border bg-white min-h-screen py-16 px-4">
+        <div className="relative  border bg-white min-h-screen py-16 px-4">
             <div className="max-w-7xl mx-auto relative">
-                <h1 id="team" className="text-5xl font-semibold font-baloo text-center mb-12 text-gray-800">
+                <h1 id="team" className="text-5xl scroll-mt-36 font-semibold font-baloo text-center mb-8 text-gray-800">
                     Meet our Faculties
                 </h1>
 

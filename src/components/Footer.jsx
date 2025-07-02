@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="p-5 bg-orange-200 dark:bg-slate-600">
+        <footer className="p-5 bg-slate-950 ">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
@@ -19,7 +19,7 @@ const Footer = () => {
                             </h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://flowbite.com/" className="hover:underline">Crafted</a>
+                                    <a href="https://craftedlearn.com/" className="hover:underline">Crafted</a>
                                 </li>
                                 <li>
                                     <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
@@ -61,7 +61,7 @@ const Footer = () => {
                 <hr className="my-6 border-white sm:mx-auto dark:border-white lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2025 <a href="https://flowbite.com/" className="hover:underline">Crafted™</a>. All Rights Reserved.
+            © 2025 <a href="https://craftedlearn.com/" className="hover:underline">Crafted™</a>. All Rights Reserved.
           </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
                         {/* Facebook */}

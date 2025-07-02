@@ -18,7 +18,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section id="hero" className="bg-white border border-red-500 my-20 py-40 px-6">
+        <section id="hero" className="bg-white my-20 py-40 px-6">
             <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center justify-between">
                 {/* Left Content */}
                 <div className="md:w-1/2 text-left space-y-6">

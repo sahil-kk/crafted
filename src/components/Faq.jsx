@@ -1,31 +1,107 @@
-import React from 'react';
-import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'; // Make sure this is globally imported
+import { useState } from "react";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function Faq() {
+const faqList = [
+    {
+        isActive: true,
+        question: "What is Crafted?",
+        answer:
+            "Crafted is a personalized learning platform designed to help school students master academic subjects and modern skills through engaging, structured, and hands-on programs.",
+    },
+    {
+        isActive: false,
+        question: "Who can enroll in Crafted programs?",
+        answer:
+            "Our courses are curated for students from Class 8 to 12, as well as aspirants preparing for competitive exams like IIT-JEE and NEET. We also offer a strong foundation stream for early learners.",
+    },
+    {
+        isActive: false,
+        question: "What subjects are covered?",
+        answer:
+            "We offer a mix of academic and future-focused courses including Math, Science and Coding ",
+    },
+    {
+        isActive: false,
+        question: "Are the programs online or offline?",
+        answer:
+            "All our sessions are currently offered online to ensure flexible and accessible learning from the comfort of your home, with live classes and mentor support.",
+    },
+    {
+        isActive: false,
+        question: "How can I enroll or get more details?",
+        answer:
+            "Click the 'Join Crafted' button on the top right or message us on WhatsApp to get started. We'll guide you through the right track based on your class and goals.",
+    },
+];
+
+const FaqItem = ({ faq, isOpen, onToggle }) => {
     return (
-        <div className="px-4 py-12 md:px-20 bg-slate-100">
-            <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">FAQs</h2>
-
-            <MDBAccordion initialActive={1}>
-                <MDBAccordionItem collapseId={1} headerTitle="Amount">
-                    <p className="text-gray-700 text-lg">
-                        The amount is ₹4,999 for the full course. You can also opt for monthly payments.
-                    </p>
-                </MDBAccordionItem>
-
-                <MDBAccordionItem collapseId={2} headerTitle="Timing">
-                    <p className="text-gray-700 text-lg">
-                        Classes are conducted every weekday from 6 PM to 8 PM IST.
-                    </p>
-                </MDBAccordionItem>
-
-                <MDBAccordionItem collapseId={3} headerTitle="Teachers">
-                    <p className="text-gray-700 text-lg">
-                        All our faculty members are from reputed institutes like IITs, NITs and CUSAT with years of teaching experience.
-                    </p>
-                </MDBAccordionItem>
-            </MDBAccordion>
+        <div className={`${isOpen ? "active" : ""} rounded-lg`}>
+            <button
+                type="button"
+                className="w-full text-left flex justify-between my-2 shadow-md  font-baloo text-xl drop-shadow-2xl text-black items-center p-4 lg:p-6 hover:bg-orange-200 transition-colors rounded-lg"
+                onClick={onToggle}
+            >
+                <span>{faq.question}</span>
+                <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+            </button>
+            <div
+                className={`${
+                    isOpen ? "block" : "hidden"
+                } p-4 lg:p-6 bg-white shadow dark:shadow-none dark:bg-[#1E2735] rounded-xl`}
+            >
+                <p className="opacity-50">{faq.answer}</p>
+            </div>
         </div>
     );
-}
+};
+
+FaqItem.propTypes = {
+    faq: PropTypes.object.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
+};
+
+
+
+const Faq = () => {
+    const [openIndex, setOpenIndex] = useState(0); // Default: first one open
+
+    const handleToggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <section className="ezy__faq8_k6LCwbWE py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+            <div className="container px-16 md:px-8 lg:px-28">
+                <div className="grid grid-cols-12 justify-between gap-6">
+                    <div className="col-span-12 md:col-span-5">
+                        <h2 className="font-bold text-[25px] md:text-[45px] leading-none mb-6">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="text-lg opacity-70">
+                            Assumenda non repellendus distinctio nihil dicta sapiente,
+                            quibusdam maiores, illum at, aliquid blanditiis eligendi.
+                        </p>
+                        <button className="bg-transparent hover:bg-blue-600 border border-blue-600 hover:text-white rounded transition mt-6 lg:mt-12 px-7 py-3 text-blue-600">
+                            View All FAQ's
+                        </button>
+                    </div>
+                    <div className="col-span-12 text-black text-lg md:col-span-6 md:col-start-7">
+                        {faqList.map((faq, i) => (
+                            <FaqItem
+                                key={i}
+                                faq={faq}
+                                isOpen={openIndex === i}
+                                onToggle={() => handleToggle(i)}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+export default Faq;

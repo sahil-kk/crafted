@@ -52,7 +52,7 @@ export default function Header() {
                     >
                         Home
                     </button>
-                    <Link to="/courses" className="text-gray-700 hover:text-orange-600">Courses</Link>
+                    <a href="#courses" className="text-gray-700 hover:text-orange-600">Courses</a>
                     <a href="#team" className="text-gray-700 hover:text-orange-600">Our Team</a>
                     <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-full transition">
                         Join Crafted
