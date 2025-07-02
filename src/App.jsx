@@ -16,7 +16,7 @@ function Home() {
         <>
 
             <a
-                href="https://wa.me/919188776434"
+                href="https://wa.me/917356324680"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-4 right-4 z-50 p-2 bg-white border-2 border-opacity-52 border-green-500 rounded-full shadow-md transition-colors duration-300 hover:bg-black group"
