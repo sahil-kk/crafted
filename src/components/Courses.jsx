@@ -4,12 +4,12 @@ const courses = [
     {
         title: "Class 8 & 9",
         desc: "Master HTML, CSS, JavaScript and React to build stunning UIs.",
-        image: "/images/herobestkid.png"
+        image: "/images/89.svg"
     },
     {
         title: "Class 10",
         desc: "Learn Node.js, Express, MongoDB, and API development.",
-        image: "https://source.unsplash.com/800x600/?backend,server"
+        image: ""
     },
     {
         title: "Class 11 & 12",
@@ -19,12 +19,12 @@ const courses = [
     {
         title: "Foundation",
         desc: "Understand core concepts of algorithms and data structures.",
-        image: "https://source.unsplash.com/800x600/?algorithms,data"
+        image: "images/fd.png"
     },
     {
         title: "IIT/AIIMS ",
         desc: "Explore supervised, unsupervised learning, and Python ML libraries.",
-        image: "https://source.unsplash.com/800x600/?ai,machinelearning"
+        image: "/images/iitaiims.jpg"
     }
 ];
 
