@@ -86,7 +86,7 @@ const CourseCard = ({ course }) => (
            <div className="font-semibold"> <h3 className="text-3xl font-semibold text-gray-800">{course.title}</h3></div>
             <p className="text-md text-gray-600 mt-2">{course.desc}</p>
             <button className="mt-4 px-4 py-2 border-2 border-black text-black bg-transparent text-lg rounded-xl hover:scale-105 hover:!border-white hover:!bg-orange-500 hover:!text-white transition duration-300">
-                Learn More
+                View Details
             </button>
         </div>
     </div>
