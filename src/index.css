@@ -16,3 +16,29 @@ body {
 .keen-slider__track {
   direction: ltr; /* Ensures slide moves to left naturally */
 }
+.glow-line {
+  transition: filter 0.3s ease, stroke 0.3s ease;
+}
+.glow-line:hover {
+  filter: drop-shadow(0 0 6px orange);
+  stroke: #ff8800;
+}
+
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 4px orange);
+    stroke: orange;
+  }
+  50% {
+    filter: drop-shadow(0 0 18px orange);
+    stroke: #ff6600;
+  }
+  100% {
+    filter: drop-shadow(0 0 4px orange);
+    stroke: orange;
+  }
+}
+
+.pulse-line {
+  animation: pulse-glow 1.8s infinite ease-in-out;
+}

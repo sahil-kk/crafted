@@ -5,7 +5,7 @@ const images = [
     '/images/herobestkid.png',
 ];
 
-export default function Hero() {
+export default function Hero({ onJoinClick }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function Hero() {
 
     return (
         <section id="hero" className="bg-white my-20 py-40 px-6">
-            <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center justify-between">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
                 {/* Left Content */}
                 <div className="md:w-1/2 text-left space-y-6">
                     <h1 className="text-4xl md:text-5xl font-extrabold">
@@ -32,24 +32,25 @@ export default function Hero() {
                     <p className="text-gray-700 text-lg max-w-md">
                         Presenting to you the best online learning platform your child will ever need to fully invest in their learning journey
                     </p>
-                    <button className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:text-[22px] transition">
-                        <div className="font-semibold text-xl font-baloo ">Book Free Demo</div>
+                    <button
+                        onClick={onJoinClick}
+                        className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:text-[22px] transition"
+                    >
+                        <div className="font-semibold text-xl font-baloo">Book Free Demo</div>
                     </button>
                 </div>
 
                 {/* Right Image with Fade Transition */}
                 <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
                     <div className="w-full h-[400px] flex items-center justify-center">
-                    <img
-                        key={currentImageIndex} // forces re-animation on change
-                        src={images[currentImageIndex]}
-                        alt="Hero Slide"
-
-                    />
-                     </div>
+                        <img
+                            key={currentImageIndex}
+                            src={images[currentImageIndex]}
+                            alt="Hero Slide"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
-
     );
 }

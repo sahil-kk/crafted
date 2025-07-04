@@ -1,12 +1,16 @@
+import React from "react";
+
 const WhyCrafted = () => {
     return (
-        <section className="bg-white mt-30 py-32  px-6">
+        <section className="bg-gradient-to-br from-white via-white to-teal-50 mt-30 py-32  px-6">
+
             <div className="max-w-7xl mx-auto text-center">
-                <h2 className="text-3xl md:text-5xl font-baloo font-semibold text-gray-900 mb-16">Why Craft<span className="text-orange-500">ed.</span></h2>
+
+                <h2 className="text-5xl md:text-5xl font-baloo font-semibold text-gray-900 mb-16">Why Craft<span className="text-orange-500 hover:font-bold">ed.</span></h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-5">
                     {/* Expert Tutors */}
-                    <div className="mb-10">
-                        <div className="flex mb-3 justify-center items-center ">
+                    <div className="mb-10 hover:scale-105 transition-transform duration-300">
+                        <div className="flex mb-3 justify-center  items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#FFA500" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" className="lucide lucide-user-icon lucide-user">
@@ -21,12 +25,13 @@ const WhyCrafted = () => {
                     </div>
 
                     {/* Customized Study Material */}
-                    <div>
+                    <div className={ "hover:scale-105 transition-transform duration-300"}>
                         <div className="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#4B0082" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round"
-                                 className="lucide lucide-notebook-text-icon lucide-notebook-text">
+                                 className="lucide lucide-notebook-text-icon lucide-notebook-text" >
+
                                 <path d="M2 6h4"/>
                                 <path d="M2 10h4"/>
                                 <path d="M2 14h4"/>
@@ -44,7 +49,7 @@ const WhyCrafted = () => {
                     </div>
 
                     {/* Mentorship Support */}
-                    <div>
+                    <div className={ "hover:scale-105 transition-transform duration-300"}>
                         <div className="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#008080" stroke-width="2" stroke-linecap="round"
@@ -64,7 +69,7 @@ const WhyCrafted = () => {
                     </div>
 
                     {/* Crafted Website */}
-                    <div>
+                    <div className={ "hover:scale-105 transition-transform duration-300"}>
                         <div className="mt-1 flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"
@@ -83,7 +88,7 @@ const WhyCrafted = () => {
                     </div>
 
                     {/* Live & Interactive Classes */}
-                    <div>
+                    <div className={ "hover:scale-105 transition-transform duration-300"}>
                         <div className="flex justify-center mt-1 mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#FF6347" stroke-width="2.1" stroke-linecap="round"
@@ -99,7 +104,7 @@ const WhyCrafted = () => {
                     </div>
 
                     {/* Flexible Scheduling */}
-                    <div>
+                    <div className={ "hover:scale-105 transition-transform duration-300"}>
                         <div className="mt-1 flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                  fill="none" stroke="#32CD32" stroke-width="2" stroke-linecap="round"

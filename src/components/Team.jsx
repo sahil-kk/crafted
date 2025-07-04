@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Team = () => {
     const [facultyData, setFacultyData] = useState([]);
@@ -9,10 +9,46 @@ const Team = () => {
 
     // 👇 Fetch data from Django REST API
     useEffect(() => {
-        fetch("https://crafted-backend-p7es.onrender.com/api/faculties/") // Replace with your actual endpoint
-            .then((res) => res.json())
-            .then((data) => setFacultyData(data))
-            .catch((err) => console.error("Error fetching faculty data:", err));
+        const data = [
+            {
+                name: "Dheeraj",
+                subject: "Physics",
+                college: "Pondicherry University",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Sinan",
+                subject: "Mathematics",
+                college: "IIT Kharagpur",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Suhail K K",
+                subject: "Chemistry",
+                college: "CUSAT",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Shayar K",
+                subject: "Physics",
+                college: "Pondicherry University",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Faseel P",
+                subject: "Physics",
+                college: "CUSAT",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Roshan Ahmed",
+                subject: "Physics",
+                college: "IISER Bhopal",
+                image_url: "/images/avt.svg",
+            },
+            // Add more if needed
+        ];
+        setFacultyData(data);
     }, []);
 
     const extendedFacultyData = [...facultyData, ...facultyData];
@@ -71,10 +107,29 @@ const Team = () => {
     const restartAutoScroll = () => startAutoScroll();
 
     return (
-        <div className="relative  bg-white min-h-screen py-16 px-4">
+        <div className="relative  bg-white min-h-screen py-36 px-4">
+
+            <svg
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute top-[-150px] left-[-270px] w-[530px] h-[530px] opacity-50 animate-pulse pointer-events-none"
+            >
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: "#F1C21B", stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: "#FF6F00", stopOpacity: 1 }} />
+                    </linearGradient>
+                </defs>
+                <path
+                    fill="url(#grad1)"
+                    d="M43,-18C48.1,1.8,39.5,22.1,23,34.8C6.6,47.4,-17.6,52.4,-38.5,40.2C-59.5,28,-77.2,-1.4,-70.2,-23.7C-63.3,-46,-31.6,-61.3,-6.4,-59.2C18.9,-57.1,37.8,-37.8,43,-18Z"
+                    transform="translate(100 100)"
+                />
+            </svg>
             <div className="max-w-7xl mx-auto relative">
+
                 <h1 id="team" className="text-5xl scroll-mt-36 font-semibold font-baloo text-center mb-8 text-gray-800">
-                    Meet our Faculties
+                    Meet our <span className="text-orange-500 "> Faculties</span>
                 </h1>
 
                 {/* Arrows */}
@@ -114,11 +169,11 @@ const Team = () => {
                                     cardsToShow === 4 ? "md:w-1/4" : "w-1/2"
                                 } w-1/2 px-2 py-10 flex-shrink-0`}
                             >
-                                <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 h-full">
+                                <div className="bg-white rounded-lg shadow-md  border-1 overflow-hidden transform hover:scale-105 transition-transform duration-300 h-full">
                                     <img
                                         src={faculty.image_url}
                                         alt={faculty.name}
-                                        className="w-full h-76 object-cover"
+                                        className="w-full opacity-50 h-76 object-cover"
                                     />
                                     <div className="text-center p-4">
                                         <h2 className="text-[26px] font-semibold text-gray-800">{faculty.name}</h2>
@@ -136,3 +191,5 @@ const Team = () => {
 };
 
 export default Team;
+
+

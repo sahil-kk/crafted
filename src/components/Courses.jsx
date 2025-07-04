@@ -9,12 +9,12 @@ const courses = [
     {
         title: "Class 10",
         desc: "Learn Node.js, Express, MongoDB, and API development.",
-        image: ""
+        image: "images/10.png"
     },
     {
         title: "Class 11 & 12",
         desc: "Design sleek interfaces with Figma, Adobe XD and UX principles.",
-        image: "https://source.unsplash.com/800x600/?design,ui"
+        image: "images/12.jpg"
     },
     {
         title: "Foundation",
@@ -31,8 +31,10 @@ const courses = [
 const Courses = () => {
     return (
         <section className="relative py-16 bg-white scroll-mt-12 overflow-hidden" id="courses">
+
             {/* Background curved lines */}
             <svg
+                className="pulse-line"
                 className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
@@ -42,12 +44,15 @@ const Courses = () => {
             >
                 <rect width="100%" height="100%" fill="white" />
                 <path
+                    className="pulse-line"
+
                     fill="none"
                     stroke="orange"
                     strokeWidth="1.5"
-                    d="M0,160 C320,290 1120,80 1440,250"
+                    d="M0,270 C320,290 1120,80 1440,250"
                 />
                 <path
+
                     fill="none"
                     stroke="black"
                     strokeWidth="0.8"
@@ -56,7 +61,7 @@ const Courses = () => {
             </svg>
 
             <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-5xl font-semibold text-black text-center mb-8 font-baloo">Our Courses</h2>
+                <h2 className="text-5xl font-semibold text-black text-center mb-8 font-baloo">Our<span className="text-orange-600 "> Courses</span></h2>
 
                 <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
                     {courses.map((course, index) => (
@@ -74,7 +79,7 @@ const Courses = () => {
 };
 
 const CourseCard = ({ course }) => (
-    <div className="bg-white rounded-2xl drop-shadow-md w-full max-w-sm transform hover:scale-105 transition-transform duration-300">
+    <div className="bg-white rounded-2xl drop-shadow-lg w-full max-w-sm transform hover:scale-110 transition-transform duration-300">
 
         <img src={course.image} alt={course.title} className="w-full h-56 object-cover rounded-t-2xl" />
         <div className="p-4 text-center  font-baloo">
@@ -88,3 +93,4 @@ const CourseCard = ({ course }) => (
 );
 
 export default Courses;
+

@@ -78,15 +78,14 @@ const Faq = () => {
             <div className="container px-16 md:px-8 lg:px-28">
                 <div className="grid grid-cols-12 justify-between gap-6">
                     <div className="col-span-12 md:col-span-5">
-                        <h2 className="font-bold text-[25px] md:text-[45px] leading-none mb-6">
-                            Frequently Asked Questions
+                        <h2 className="font-bold text-black text-4xl md:text-[45px] leading-none mb-6">
+                            Frequently Asked<br/> <span className="text-orange-500">Questions</span>
                         </h2>
-                        <p className="text-lg opacity-70">
-                            Assumenda non repellendus distinctio nihil dicta sapiente,
-                            quibusdam maiores, illum at, aliquid blanditiis eligendi.
+                        <p className="text-xl text-black opacity-70">
+                            Got questions about your board exams or JEE/NEET prep? We’ve answered some of the most common doubts to help you get started with confidence at Crafted.
                         </p>
-                        <button className="bg-transparent hover:bg-blue-600 border border-blue-600 hover:text-white rounded transition mt-6 lg:mt-12 px-7 py-3 text-blue-600">
-                            View All FAQ's
+                        <button className="bg-transparent font-monospace border-2 border-orange-400 text-orange-500 hover:bg-orange-500 hover:text-black font-semibold rounded transition-colors duration-300 mt-6 lg:mt-12 px-7 py-3">
+                            Let’s Connect
                         </button>
                     </div>
                     <div className="col-span-12 text-black text-lg md:col-span-6 md:col-start-7">

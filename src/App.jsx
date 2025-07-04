@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
@@ -8,21 +8,32 @@ import Youtube from "./components/Youtube";
 import Courses from "./components/Courses";
 import WhyCrafted from "./components/WhyCrafted";
 import Faq from "./components/Faq";
-import CoursesPage from './pages/CoursesPage'; // newly created
-import { useLocation } from 'react-router-dom';
+import Popup from "./components/Popup";
 
-function Home() {
+function App() {
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        const submitted = localStorage.getItem("contactInfo");
+        if (!submitted) {
+            setTimeout(() => setShowPopup(true), 1000);
+        }
+    }, []);
+
     return (
         <>
+            <Header onJoinClick={() => setShowPopup(true)} />
+            {showPopup && <Popup onClose={() => setShowPopup(false)} />}
 
+            {/* Floating WhatsApp Button */}
             <a
                 href="https://wa.me/917356324680"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="fixed bottom-4 right-4 z-50 p-2 bg-white border-2 border-opacity-52 border-green-500 rounded-full shadow-md transition-colors duration-300 hover:bg-black group"
+                className="fixed bottom-4 right-4 z-50 p-2 bg-white border-2 border-green-500 rounded-full shadow-md transition hover:bg-black group"
             >
                 <svg
-                    className="transition-transform duration-300 group-hover:scale-125"
+                    className="transition-transform group-hover:scale-125"
                     xmlns="http://www.w3.org/2000/svg"
                     width="42"
                     height="42"
@@ -41,27 +52,17 @@ function Home() {
                     />
                 </svg>
             </a>
-            <Hero/>
-            <Youtube/>
-            <Courses/>
-            <WhyCrafted/>
-            <Team/>
-            <Testimonials/>
-            <Faq/>
-            <Footer/>
-        </>
-    );
-}
 
-function App() {
-    return (
-        <Router>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/courses" element={<CoursesPage/>}/>
-            </Routes>
-        </Router>
+            {/* Landing Page Sections */}
+            <Hero onJoinClick={() => setShowPopup(true)} />
+            <Youtube />
+            <Courses />
+            <WhyCrafted />
+            <Team />
+            <Testimonials />
+            <Faq />
+            <Footer />
+        </>
     );
 }
 

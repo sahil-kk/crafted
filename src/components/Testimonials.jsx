@@ -74,7 +74,39 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-white py-16 text-black">
+        <section className="relative bg-white py-16 text-black overflow-hidden" id="testimonials">
+            <svg
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute top-[-120px] right-[-350px] w-auto h-[600px] opacity-60 animate-pulse pointer-events-none"
+            >
+                <path
+                    fill="#F1C21B"
+                    d="M43,-18C48.1,1.8,39.5,22.1,23,34.8C6.6,47.4,-17.6,52.4,-38.5,40.2C-59.5,28,-77.2,-1.4,-70.2,-23.7C-63.3,-46,-31.6,-61.3,-6.4,-59.2C18.9,-57.1,37.8,-37.8,43,-18Z"
+                    transform="translate(100 100)"
+                />
+            </svg>
+
+            <svg
+                className="absolute top-0 left-0 w-full h-full opacity-60 pointer-events-none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                fill="none"
+                viewBox="0 0 1440 320"
+            >
+                <path
+                    fill="none"
+                    stroke="orange"
+                    strokeWidth="2"
+                    d="M0,130 C300,100 1140,220 1440,300"
+                />
+                <path
+                    fill="none"
+                    stroke="grey"
+                    strokeWidth="1.5"
+                    d="M0,340 C400,180 1040,280 1440,220"
+                />
+            </svg>
             <h2 className="text-5xl font-baloo text-center font-semibold mb-24">
                 <span className="text-orange-500">Student</span><br />Success Stories
             </h2>
