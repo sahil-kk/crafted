@@ -41,8 +41,8 @@ export default function Hero({ onJoinClick }) {
                 </div>
 
                 {/* Right Image with Fade Transition */}
-                <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                    <div className="w-full h-[400px] flex items-center justify-center">
+                <div className="md:w-1/2 mt-10 md:mt-0 md:h-[300px] flex justify-center">
+                    <div className="w-full h-[400px]  flex items-center justify-center">
                         <img
                             key={currentImageIndex}
                             src={images[currentImageIndex]}
