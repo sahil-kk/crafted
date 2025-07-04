@@ -28,7 +28,7 @@ const Popup = ({ onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4 py-6">
-            <div className="bg-white w-full max-w-2xl rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-popup max-h-[90vh] overflow-y-auto relative">
+            <div className="bg-white w-full max-w-2xl rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-popup max-h-screen overflow-y-auto relative">
 
                 {/* Close Button */}
                 <button onClick={onClose} className="absolute top-3 right-4 text-gray-500 hover:text-black text-2xl font-bold">×</button>
@@ -39,8 +39,8 @@ const Popup = ({ onClose }) => {
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="flex-1 p-6 md:p-8 space-y-4 text-left">
-                    <h2 className="text-2xl font-semibold ml-16 text-gray-800">Get in touch</h2>
+                <form onSubmit={handleSubmit} className="flex-1 p-6 md:p-8 space-y-4 text-center">
+                    <h2 className="text-2xl font-semibold text-gray-800">Get in touch</h2>
 
                     <input
                         type="text"
