@@ -15,7 +15,7 @@ const Popup = ({ onClose }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        await fetch("https://sheetdb.io/api/v1/YOUR_API_ID", {
+        await fetch("https://sheetdb.io/api/v1/5mjjekeiijb0q", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ data: formData }),
@@ -28,9 +28,15 @@ const Popup = ({ onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4 py-6">
-            <div className="bg-white w-full max-w-lg sm:max-w-md rounded-xl shadow-2xl flex flex-col md:flex-row animate-popup relative max-h-screen overflow-y-auto">
+            <div className="bg-white w-full max-w-3xl sm:max-w-lg rounded-xl shadow-2xl flex flex-col md:flex-row animate-popup relative max-h-screen overflow-y-auto">
+
                 {/* Close Button */}
-                <button onClick={onClose} className="absolute top-3 right-4 text-gray-500 hover:text-black text-2xl font-bold">×</button>
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-gray-500 hover:text-black text-3xl font-bold"
+                >
+                    ×
+                </button>
 
                 {/* Left Side */}
                 <div className="bg-gradient-to-bl from-slate-800 to-orange-300 flex items-center justify-center p-8 md:w-1/2">
