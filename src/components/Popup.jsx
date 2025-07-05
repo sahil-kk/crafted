@@ -15,13 +15,18 @@ const Popup = ({ onClose }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const dataToSend = {
+            ...formData,
+            Status: "Didn't Contact"  // 👈 Add this key-value pair
+        };
+
         await fetch("https://sheetdb.io/api/v1/5mjjekeiijb0q", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ data: formData }),
+            body: JSON.stringify({ data: dataToSend }),
         });
 
-        localStorage.setItem("contactInfo", JSON.stringify(formData));
+        localStorage.setItem("contactInfo", JSON.stringify(dataToSend));
         alert("Thanks for connecting!");
         onClose();
     };
