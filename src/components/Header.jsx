@@ -43,7 +43,7 @@ export default function Header({ onJoinClick }) {
                 </nav>
 
                 {/* Mobile Menu Toggle */}
-                <div className="md:hidden">
+                <div className="md:hidden text-center md:text-center">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
@@ -52,8 +52,8 @@ export default function Header({ onJoinClick }) {
 
             {/* Mobile Nav */}
             {isMenuOpen && (
-                <div className="md:hidden mt-4 px-6 pb-4 space-y-4">
-                    <button onClick={() => handleScrollTo('hero')} className="block text-gray-700 hover:text-orange-600">Home</button>
+                <div className="md:hidden text-center mt-4 px-6 pb-4 space-y-4">
+                    <a href="#hero" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Home</a>
                     <a href="#courses" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Courses</a>
                     <a href="#team" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Our Team</a>
                     <button
