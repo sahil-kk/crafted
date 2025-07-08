@@ -30,7 +30,7 @@ export default function Hero({ onJoinClick }) {
                         </div>
                     </h1>
                     <p className="text-gray-700 text-lg max-w-md">
-                        Presenting to you the best online learning platform your child will ever need to fully invest in their learning journey
+                        Presenting to you the best online learning platform you will ever need to fully invest in their learning journey
                     </p>
                     <button
                         onClick={onJoinClick}
