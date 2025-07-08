@@ -15,18 +15,13 @@ const Popup = ({ onClose }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const dataToSend = {
-            ...formData,
-            Status: "Didn't Contact"  // 👈 Add this key-value pair
-        };
-
         await fetch("https://sheetdb.io/api/v1/5mjjekeiijb0q", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ data: dataToSend }),
+            body: JSON.stringify({ data: formData }),
         });
 
-        localStorage.setItem("contactInfo", JSON.stringify(dataToSend));
+        localStorage.setItem("contactInfo", JSON.stringify(formData));
         alert("Thanks for connecting!");
         onClose();
     };
@@ -38,19 +33,19 @@ const Popup = ({ onClose }) => {
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-gray-500 hover:text-black text-3xl font-bold"
+                    className="absolute top-5 right-4 text-gray-500 hover:text-black text-3xl font-bold"
                 >
                     ×
                 </button>
 
                 {/* Left Side */}
-                <div className="bg-gradient-to-bl from-slate-800 to-orange-300 flex items-center justify-center p-8 md:w-1/2">
-                    <img src="/images/mail2.svg" alt="Mail Icon" className="w-full" />
+                <div className="bg-gradient-to-br from-orange-300  to-white flex items-center justify-center  md:w-1/2">
+                    <img src="/images/mailblack.svg" alt="Mail Icon" className="w-full" />
                 </div>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="flex-1 p-4 sm:p-6 md:p-8 space-y-3 text-center">
-                    <h2 className="text-2xl font-semibold text-gray-800">Get in touch</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800">Get in <span className="text-orange-500">touch</span></h2>
 
                     <input
                         type="text"

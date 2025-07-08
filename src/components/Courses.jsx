@@ -3,27 +3,27 @@ import React from "react";
 const courses = [
     {
         title: "Class 8 & 9",
-        desc: "Master HTML, CSS, JavaScript and React to build stunning UIs.",
+        desc: "Strengthen basics Maths and Science with concept clarity and NCERT aligned sessions.",
         image: "/images/89.svg"
     },
     {
         title: "Class 10",
-        desc: "Learn Node.js, Express, MongoDB, and API development.",
+        desc: "Crack boards with structured preperation in Physics, Chemistry, Biology, and Maths.",
         image: "images/10.png"
     },
     {
         title: "Class 11 & 12",
-        desc: "Design sleek interfaces with Figma, Adobe XD and UX principles.",
+        desc: "Deep dive into core PCMB topics with exam oriented teaching and regular doubt support.",
         image: "images/12.jpg"
     },
     {
         title: "Foundation",
-        desc: "Understand core concepts of algorithms and data structures.",
+        desc: "Build early strength for JEE/NEET with logical reasoning and core science concepts.",
         image: "images/fd.png"
     },
     {
         title: "IIT/AIIMS ",
-        desc: "Explore supervised, unsupervised learning, and Python ML libraries.",
+        desc: "Target top ranks with advanced level PCM/Biology practice and exam strategies.",
         image: "/images/iitaiims.jpg"
     }
 ];
