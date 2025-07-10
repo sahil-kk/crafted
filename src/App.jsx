@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
@@ -9,23 +11,22 @@ import Courses from "./components/Courses";
 import WhyCrafted from "./components/WhyCrafted";
 import Faq from "./components/Faq";
 import Popup from "./components/Popup";
+import AnswerUpload from "./pages/AnswerUpload"; // ✅ Import AnswerUpload
+import TestDashboard from "./pages/TestDashboard";
 
-function App() {
-    const [showPopup, setShowPopup] = useState(false);
-
-    useEffect(() => {
-        const submitted = localStorage.getItem("contactInfo");
-        if (!submitted) {
-            setTimeout(() => setShowPopup(true), 1000);
-        }
-    }, []);
-
+function HomePage({ setShowPopup }) {
     return (
         <>
             <Header onJoinClick={() => setShowPopup(true)} />
-            {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+            <Hero onJoinClick={() => setShowPopup(true)} />
+            <Youtube />
+            <Courses />
+            <WhyCrafted />
+            <Team />
+            <Testimonials />
+            <Faq />
+            <Footer />
 
-            {/* Floating WhatsApp Button */}
             <a
                 href="https://wa.me/917356324680"
                 target="_blank"
@@ -52,17 +53,29 @@ function App() {
                     />
                 </svg>
             </a>
-
-            {/* Landing Page Sections */}
-            <Hero onJoinClick={() => setShowPopup(true)} />
-            <Youtube />
-            <Courses />
-            <WhyCrafted />
-            <Team />
-            <Testimonials />
-            <Faq />
-            <Footer />
         </>
+    );
+}
+
+function App() {
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        const submitted = localStorage.getItem("contactInfo");
+        if (!submitted) {
+            setTimeout(() => setShowPopup(true), 1000);
+        }
+    }, []);
+
+    return (
+        <Router>
+            {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+            <Routes>
+                <Route path="/" element={<HomePage setShowPopup={setShowPopup} />} />
+                <Route path="/AnswerUpload" element={<AnswerUpload />} />
+                <Route path="/TestDashboard" element={<TestDashboard />} />
+            </Routes>
+        </Router>
     );
 }
 
