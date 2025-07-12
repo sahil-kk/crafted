@@ -39,7 +39,7 @@ const Popup = ({ onClose }) => {
                 </button>
 
                 {/* Left Side */}
-                <div className="bg-gradient-to-br from-orange-300  to-white flex items-center justify-center  md:w-1/2">
+                <div className="bg-orange-300 flex items-center justify-center  md:w-1/2">
                     <img src="/images/mailblack.svg" alt="Mail Icon" className="w-full" />
                 </div>
 
