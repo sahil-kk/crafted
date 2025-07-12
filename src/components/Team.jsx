@@ -7,7 +7,7 @@ const Team = () => {
     const [cardsToShow, setCardsToShow] = useState(4);
     const intervalRef = useRef(null);
 
-    // 👇 Fetch data from Django REST API
+
     useEffect(() => {
         const data = [
             {
@@ -32,6 +32,12 @@ const Team = () => {
                 name: "Shayar",
                 subject: "Physics",
                 college: "Pondicherry University",
+                image_url: "/images/avt.svg",
+            },
+            {
+                name: "Sahil",
+                subject: "Physics",
+                college: "VIT",
                 image_url: "/images/avt.svg",
             },
             {
