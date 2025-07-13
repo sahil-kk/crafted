@@ -27,18 +27,32 @@ export default function AnswerUpload() {
     let statusMessage = "";
     let isUploadDisabled = true;
 
-    if (currentHour >= 22 || currentHour < 2) {
-        statusMessage =
-            <div className="text-2xl text-slate-900 font-mono">Late submission: Better late than never.<br/> We believe in second chances.</div>;
+    if (currentHour >= 10 && currentHour < 12) {
+        statusMessage = (
+            <div className="text-2xl text-slate-900 font-mono">
+                Late submission: Better late than never.<br />We believe in second chances.
+            </div>
+        );
         isUploadDisabled = false;
-    } else if (currentHour === 21) {
-        statusMessage =
-            <div className="text-2xl text-slate-900 font-mono">Drop your brilliance here</div>;
+    } else if (currentHour === 9) {
+        statusMessage = (
+            <div className="text-2xl text-slate-900 font-mono">
+                Drop your brilliance here.
+            </div>
+        );
         isUploadDisabled = false;
-    } else if (currentHour === 20) {
-        statusMessage = <div className="text-2xl text-slate-900 font-mono">Gear up. The battle of brains is almost here.</div>;
+    } else if (currentHour === 8) {
+        statusMessage = (
+            <div className="text-2xl text-slate-900 font-mono">
+                Gear up. The battle of brains is almost here.
+            </div>
+        );
     } else {
-        statusMessage = <div className="text-2xl text-slate-900 font-mono">Books over bytes—get back to the grind!</div>;
+        statusMessage = (
+            <div className="text-2xl text-slate-900 font-mono">
+                Get back to the grind!
+            </div>
+        );
     }
 
     const handleChange = (e) => {
@@ -82,7 +96,7 @@ export default function AnswerUpload() {
     };
 
     return (
-        <section className="bg-gradient-to-t from-cyan-200 to-white py-24 px-6 min-h-screen">
+        <section className="bg-gradient-to-t from-orange-400 to-white py-24 px-6 min-h-screen">
             <div className="max-w-2xl mx-auto text-center">
                 <h1 className="text-4xl font-bold text-gray-800 mb-6 font-baloo">
                     Upload Your Answer Sheet
