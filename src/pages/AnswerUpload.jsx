@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
     getStorage,
     ref,
@@ -37,7 +37,7 @@ export default function AnswerUpload() {
     } else if (currentHour === 9) {
         statusMessage = (
             <div className="text-2xl text-slate-900 font-mono">
-                Drop your brilliance here.
+                Let's see what you've got
             </div>
         );
         isUploadDisabled = false;
@@ -96,10 +96,16 @@ export default function AnswerUpload() {
     };
 
     return (
-        <section className="bg-gradient-to-t from-orange-400 to-white py-24 px-6 min-h-screen">
+        <section
+            className="relative bg-white bg-cover bg-center bg-no-repeat px-6 pb-12 min-h-screen"
+            style={{ backgroundImage: "url('/images/bgpattern.svg')" }}
+        >
+            <div className="text-center">
+                <img src="images/crafted.svg" alt="Crafted" className="w-full h-60" />
+            </div>
             <div className="max-w-2xl mx-auto text-center">
-                <h1 className="text-4xl font-bold text-gray-800 mb-6 font-baloo">
-                    Upload Your Answer Sheet
+                <h1 className="text-5xl font-bold text-gray-800 mb-6 font-baloo">
+                    Weekly <span className='text-orange-500'>Exam</span>
                 </h1>
 
                 <p className="text-gray-600 text-lg mb-4">{statusMessage}</p>
