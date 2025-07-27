@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -13,6 +13,7 @@ import Faq from "./components/Faq";
 import Popup from "./components/Popup";
 import AnswerUpload from "./pages/AnswerUpload";
 import TestDashboard from "./pages/TestDashboard";
+import Login from "./pages/Login";
 
 function HomePage({ setShowPopup }) {
     return (
@@ -61,13 +62,14 @@ function HomePage({ setShowPopup }) {
 function App() {
     const [showPopup, setShowPopup] = useState(false);
     const location = useLocation();
+    const isAdmin = localStorage.getItem("isAdmin") === "true";
 
     useEffect(() => {
         const submitted = localStorage.getItem("contactInfo");
-        if (!submitted) {
+        if (!submitted && location.pathname === "/") {
             setTimeout(() => setShowPopup(true), 1000);
         }
-    }, []);
+    }, [location.pathname]);
 
     return (
         <>
@@ -78,7 +80,13 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage setShowPopup={setShowPopup} />} />
                 <Route path="/AnswerUpload" element={<AnswerUpload />} />
-                <Route path="/TestDashboard" element={<TestDashboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route
+                    path="/TestDashboard"
+                    element={
+                        isAdmin ? <TestDashboard /> : <Navigate to="/login" replace />
+                    }
+                />
             </Routes>
         </>
     );

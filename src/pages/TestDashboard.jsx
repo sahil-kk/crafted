@@ -8,12 +8,23 @@ export default function TestDashboard() {
     const [uploads, setUploads] = useState([]);
     const [selectedClass, setSelectedClass] = useState(null);
     const [marks, setMarks] = useState({});
+    const [selectedDate, setSelectedDate] = useState(""); // format: yyyy-mm-dd
 
     useEffect(() => {
         const fetchUploads = async () => {
             const snapshot = await getDocs(collection(db, "answers"));
-            const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-            setUploads(data);
+            const data = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+
+            const sorted = data.sort((a, b) => {
+                const dateA = a.uploadedAt?.toDate?.() ?? new Date(0);
+                const dateB = b.uploadedAt?.toDate?.() ?? new Date(0);
+                return dateB - dateA;
+            });
+
+            setUploads(sorted);
         };
 
         fetchUploads();
@@ -34,7 +45,13 @@ export default function TestDashboard() {
     };
 
     const filteredUploads = selectedClass
-        ? uploads.filter(item => item.class === selectedClass)
+        ? uploads
+            .filter(item => item.class === selectedClass)
+            .filter(item => {
+                if (!selectedDate) return true;
+                const dateStr = item.uploadedAt?.toDate?.().toISOString().split("T")[0];
+                return dateStr === selectedDate;
+            })
         : [];
 
     return (
@@ -69,15 +86,27 @@ export default function TestDashboard() {
                 ) : (
                     <div>
                         <button
-                            onClick={() => setSelectedClass(null)}
+                            onClick={() => {
+                                setSelectedClass(null);
+                                setSelectedDate("");
+                            }}
                             className="mb-6 bg-gray-100 border px-4 py-2 rounded-full hover:bg-gray-200"
                         >
                             ← Back to Classes
                         </button>
 
-                        <h2 className="text-2xl font-bold mb-4 text-gray-700">
-                            Answers - Class {selectedClass}
-                        </h2>
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                            <h2 className="text-2xl font-bold text-gray-700">
+                                Answers - Class {selectedClass}
+                            </h2>
+
+                            <input
+                                type="date"
+                                value={selectedDate}
+                                onChange={(e) => setSelectedDate(e.target.value)}
+                                className="mt-2 sm:mt-0 border px-4 py-2 rounded text-gray-700"
+                            />
+                        </div>
 
                         <div className="overflow-x-auto bg-gray-50 p-6 rounded-xl shadow-md">
                             <table className="w-full table-auto border-collapse text-left text-gray-800">
@@ -99,7 +128,7 @@ export default function TestDashboard() {
                                         <td className="py-3 px-4">{item.name}</td>
                                         <td className="py-3 px-4">{item.class}</td>
                                         <td className="py-3 px-4">
-                                            {item.uploadedAt?.toDate().toLocaleString()}
+                                            {item.uploadedAt?.toDate?.().toLocaleString()}
                                         </td>
                                         <td className="py-3 px-4">
                                             <a
@@ -115,7 +144,9 @@ export default function TestDashboard() {
                                             <input
                                                 type="text"
                                                 value={marks[item.id] || item.mark || ""}
-                                                onChange={(e) => handleMarkChange(item.id, e.target.value)}
+                                                onChange={(e) =>
+                                                    handleMarkChange(item.id, e.target.value)
+                                                }
                                                 className="border px-2 py-1 rounded w-20"
                                             />
                                         </td>
@@ -133,7 +164,9 @@ export default function TestDashboard() {
                             </table>
 
                             {filteredUploads.length === 0 && (
-                                <p className="text-center text-gray-500 py-6">No uploads found.</p>
+                                <p className="text-center text-gray-500 py-6">
+                                    No uploads found for this date.
+                                </p>
                             )}
                         </div>
                     </div>
