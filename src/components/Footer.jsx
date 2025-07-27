@@ -10,7 +10,7 @@ const Footer = () => {
                         alt="Crafted Logo"
                         className="h-10 mb-3"
                     />
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-gray-600 font-baloo">
                         Crafted supports students from Classes 8 to 12 with structured prep for boards, JEE, NEET, and foundations. With expert guidance and smart tools, students learn better, stay consistent, and achieve more.
                     </p>
                 </div>
