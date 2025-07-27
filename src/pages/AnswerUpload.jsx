@@ -100,19 +100,19 @@ export default function AnswerUpload() {
             className="relative bg-white bg-cover bg-center bg-no-repeat px-6 pb-12 min-h-screen"
             style={{ backgroundImage: "url('/images/bgpattern.svg')" }}
         >
-            <div className="text-center">
-                <img src="images/crafted.svg" alt="Crafted" className="w-full h-60" />
+            <div className="flex justify-center md:justify-start px-4 mb-4 mt-4">
+                <img src="/images/logonew.svg" alt="Crafted" className="h-10 w-auto md:h-16" />
             </div>
             <div className="max-w-2xl mx-auto text-center">
-                <h1 className="text-5xl font-bold text-gray-800 mb-6 font-baloo">
+                <div className="text-4xl md:text-5xl font-bold text-gray-800 mb-3 font-baloo">
                     Weekly <span className='text-orange-500'>Exam</span>
-                </h1>
+                </div>
 
                 <p className="text-gray-600 text-lg mb-4">{statusMessage}</p>
 
                 <form
                     onSubmit={handleUpload}
-                    className="bg-white shadow-lg mt-24 p-6 rounded-xl space-y-6 text-left"
+                    className="bg-white shadow-lg mt-16 p-6 rounded-xl space-y-6 text-left"
                 >
                     <input
                         type="text"
