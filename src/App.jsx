@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,7 +11,7 @@ import Courses from "./components/Courses";
 import WhyCrafted from "./components/WhyCrafted";
 import Faq from "./components/Faq";
 import Popup from "./components/Popup";
-import AnswerUpload from "./pages/AnswerUpload"; // ✅ Import AnswerUpload
+import AnswerUpload from "./pages/AnswerUpload";
 import TestDashboard from "./pages/TestDashboard";
 
 function HomePage({ setShowPopup }) {
@@ -27,6 +27,7 @@ function HomePage({ setShowPopup }) {
             <Faq />
             <Footer />
 
+            {/* WhatsApp Button */}
             <a
                 href="https://wa.me/917356324680"
                 target="_blank"
@@ -59,6 +60,7 @@ function HomePage({ setShowPopup }) {
 
 function App() {
     const [showPopup, setShowPopup] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const submitted = localStorage.getItem("contactInfo");
@@ -68,14 +70,17 @@ function App() {
     }, []);
 
     return (
-        <Router>
-            {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+        <>
+            {location.pathname === "/" && showPopup && (
+                <Popup onClose={() => setShowPopup(false)} />
+            )}
+
             <Routes>
                 <Route path="/" element={<HomePage setShowPopup={setShowPopup} />} />
                 <Route path="/AnswerUpload" element={<AnswerUpload />} />
                 <Route path="/TestDashboard" element={<TestDashboard />} />
             </Routes>
-        </Router>
+        </>
     );
 }
 

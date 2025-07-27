@@ -18,7 +18,7 @@ export default function Header({ onJoinClick }) {
     };
 
     return (
-        <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'shadow-md p-4 bg-white/70 backdrop-blur-md' : 'bg-white p-6 mt-5'}`}>
+        <header className={`fixed top-0 z-20 w-full transition-all duration-300 ${isScrolled ? 'shadow-md p-4 bg-white/70 backdrop-blur-md' : 'bg-white p-6 mt-5'}`}>
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <button onClick={() => handleScrollTo('hero')}>
