@@ -2,34 +2,43 @@ import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
     {
-        name: "Ritvik Sharma",
-        role: "Class 12 – NEET Aspirant",
-        text: "Crafted made NEET Biology so simple to understand. The daily targets and concept videos really boosted my confidence.",
+        name: "Mihasha",
+        role: "Class 12",
+        text: "Your classes are very good and informative. I now feel at ease with subjects I previously had trouble with.",
     },
     {
-        name: "Ishaan Mehta",
-        role: "Class 12 – JEE Aspirant",
-        text: "From DPPs to mock tests, Crafted’s JEE prep system helped me improve speed, accuracy, and rank over time.",
+        name: "Isha Shameer",
+        role: "Class 12",
+        text: "The sessions are very productive, engaging, and interactive. I truly feel that the one and a\n" +
+            "half hours I spend here are well-utilized, and the teaching pace suits me very well.",
     },
     {
-        name: "Meera Reddy",
-        role: "Class 11 Student",
-        text: "The transition from Class 10 to 11 felt smooth with Crafted’s structured lessons and doubt-solving support.",
+        name: "Hamidha",
+        role: "Class 12",
+        text: "I like ur classes very much it is very concept based as well as understandable. I dont feel\n" +
+            "bored when i listen to the classes of craIed especially physics which is a hard sub for me",
     },
     {
-        name: "Tanisha Verma",
-        role: "Foundation Track (8–10)",
-        text: "Joining early was the best decision! Crafted helped me build strong basics in Math and Science step by step.",
+        name: "Ayisha",
+        role: "Class 10",
+        text: "I got a perfect mentor too..",
     },
     {
-        name: "Aarav Nair",
-        role: "Class 10 Student",
-        text: "The board-focused modules and weekly assessments kept me consistent without stressing me out.",
+        name: "Anakha",
+        role: "Class 11",
+        text: "Now, I am pretty confident with my topics.",
     },
     {
-        name: "Saanvi Rao",
-        role: "Class 8 Student",
-        text: "I actually enjoy learning now! Crafted uses visuals and real-life examples that make Science fun and easy.",
+        name: "Emin",
+        role: "Class 9",
+        text: "I am really happy to attend classes of faculties from IITs and NITs.",
+    },
+    {
+        name: "Aswin",
+        role: "Class 12",
+        text: "Thank you, Crafted. My friend suggested you. I am very happy with the classes. Every student\n" +
+            "should get classes like this. Focusing on concepts rather than covering portions. Thank you\n" +
+            "again.",
     },
 ];
 
