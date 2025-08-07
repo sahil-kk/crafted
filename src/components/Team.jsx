@@ -14,19 +14,19 @@ const Team = () => {
                 name: "Dheeraj",
                 subject: "Physics",
                 college: "Pondicherry University",
-                image_url: "/images/dheeraj.svg",
+                image_url: "/images/dheeraj.png",
             },
             {
                 name: "Suhail",
                 subject: "Chemistry",
                 college: "CUSAT",
-                image_url: "/images/suhail.svg",
+                image_url: "/images/suhail.png",
             },
             {
                 name: "Shayar",
                 subject: "Physics",
                 college: "Pondicherry University",
-                image_url: "/images/shayar.svg",
+                image_url: "/images/shayar.png",
             },
             {
                 name: "Sinan",
@@ -38,19 +38,19 @@ const Team = () => {
                 name: "Sahil",
                 subject: "Physics",
                 college: "VIT",
-                image_url: "/images/avt.svg",
+                image_url: "/images/sahil.png",
             },
              {
                 name: "Faseel",
                 subject: "Physics",
                 college: "CUSAT",
-                image_url: "/images/faseel.svg",
+                image_url: "/images/faseel.png",
             },
             {
                 name: "Roshan",
                 subject: "Physics",
                 college: "IISER Bhopal",
-                image_url: "/images/roshan.svg",
+                image_url: "/images/roshan.png",
             },
             // Add more if needed
         ];
