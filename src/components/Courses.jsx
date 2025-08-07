@@ -1,30 +1,36 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const courses = [
     {
         title: "Class 8 & 9",
         desc: "Strengthen basics Maths and Science with concept clarity and NCERT aligned sessions.",
-        image: "/images/89.svg"
+        image: "/images/89.svg",
+        path: "/courses/class-8-9"
     },
     {
         title: "Class 10",
-        desc: "Crack boards with structured preperation in Physics, Chemistry, Biology, and Maths.",
-        image: "images/10.png"
+        desc: "Crack boards with structured preparation in Physics, Chemistry, Biology, and Maths.",
+        image: "images/10.png",
+        path: "/courses/class-10"
     },
     {
         title: "Class 11 & 12",
         desc: "Deep dive into core PCMB topics with exam oriented teaching and regular doubt support.",
-        image: "images/12.jpg"
+        image: "images/12.jpg",
+        path: "/courses/class-11-12"
     },
     {
         title: "Foundation",
         desc: "Build early strength for JEE/NEET with logical reasoning and core science concepts.",
-        image: "images/fd.png"
+        image: "images/fd.png",
+        path: "/courses/foundation"
     },
     {
         title: "IIT/AIIMS ",
         desc: "Target top ranks with advanced level PCM/Biology practice and exam strategies.",
-        image: "/images/iitaiims.jpg"
+        image: "/images/iitaiims.jpg",
+        path: "/courses/iit-aiims"
     }
 ];
 
@@ -85,9 +91,11 @@ const CourseCard = ({ course }) => (
         <div className="p-4 text-center  font-baloo">
            <div className="font-semibold"> <h3 className="text-3xl font-semibold text-gray-800">{course.title}</h3></div>
             <p className="text-md text-gray-600 mt-2">{course.desc}</p>
-            <button className="mt-4 px-4 py-2 border-2 border-black text-black bg-transparent text-lg rounded-xl hover:scale-105 hover:!border-white hover:!bg-orange-500 hover:!text-white transition duration-300">
-                View Details
-            </button>
+            <Link to={course.path}>
+                <button className="mt-4 px-4 py-2 border-2 border-black text-black bg-transparent text-lg rounded-xl hover:scale-105 hover:!border-white hover:!bg-orange-500 hover:!text-white transition duration-300">
+                    View Details
+                </button>
+            </Link>
         </div>
     </div>
 );

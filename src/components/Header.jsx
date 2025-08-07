@@ -23,7 +23,7 @@ export default function Header({ onJoinClick }) {
                 {/* Logo */}
                 <button onClick={() => handleScrollTo('hero')}>
                     <img
-                        src="/images/logonew.svg"
+                        src="/images/craftedlonglogo.svg"
                         alt="Crafted Logo"
                         className={`transition-all ${isScrolled ? 'h-12' : 'h-14'} w-auto`}
                     />

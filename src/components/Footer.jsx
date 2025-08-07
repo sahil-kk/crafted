@@ -6,7 +6,7 @@ const Footer = () => {
                 {/* 1. Logo & Tagline */}
                 <div className="flex flex-col items-center">
                     <img
-                        src="/images/logonew.svg"
+                        src="/images/craftedlonglogo.svg"
                         alt="Crafted Logo"
                         className="h-10 mb-3"
                     />

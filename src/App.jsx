@@ -14,6 +14,11 @@ import Popup from "./components/Popup";
 import AnswerUpload from "./pages/AnswerUpload";
 import TestDashboard from "./pages/TestDashboard";
 import Login from "./pages/Login";
+import Class89 from "./pages/Class89";
+import Class10 from "./pages/Class10";
+import Class1112 from "./pages/Class1112";
+import Foundation from "./pages/Foundation";
+import IITAiims from "./pages/IITAiims";
 
 function HomePage({ setShowPopup }) {
     return (
@@ -66,15 +71,23 @@ function App() {
 
     useEffect(() => {
         const submitted = localStorage.getItem("contactInfo");
-        if (!submitted && location.pathname === "/") {
-            setTimeout(() => setShowPopup(true), 1000);
+        const popupShown = sessionStorage.getItem("popupShown");
+
+        if (!submitted && location.pathname === "/" && !popupShown) {
+            setTimeout(() => {
+                setShowPopup(true);
+                sessionStorage.setItem("popupShown", "true");
+            }, 1000);
         }
     }, [location.pathname]);
 
     return (
         <>
             {location.pathname === "/" && showPopup && (
-                <Popup onClose={() => setShowPopup(false)} />
+                <Popup onClose={() => {
+                    setShowPopup(false);
+                    sessionStorage.setItem("popupShown", "true"); // Prevent further popups in session
+                }} />
             )}
 
             <Routes>
@@ -87,6 +100,11 @@ function App() {
                         isAdmin ? <TestDashboard /> : <Navigate to="/login" replace />
                     }
                 />
+                <Route path="/courses/class-8-9" element={<Class89 />} />
+                <Route path="/courses/class-10" element={<Class10 />} />
+                <Route path="/courses/class-11-12" element={<Class1112 />} />
+                <Route path="/courses/foundation" element={<Foundation />} />
+                <Route path="/courses/iit-aiims" element={<IITAiims />} />
             </Routes>
         </>
     );
