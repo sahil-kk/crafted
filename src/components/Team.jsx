@@ -135,7 +135,7 @@ const Team = () => {
             <div className="max-w-7xl mx-auto relative">
 
                 <h1 id="team" className="text-5xl scroll-mt-36 font-semibold font-baloo text-center mb-8 text-gray-800">
-                    Meet our <span className="text-orange-500 "> Faculties</span>
+                    Meet our <span className="text-orange-500 "> Team</span>
                 </h1>
 
                 {/* Arrows */}
