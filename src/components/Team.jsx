@@ -179,7 +179,7 @@ const Team = () => {
                                     <img
                                         src={faculty.image_url}
                                         alt={faculty.name}
-                                        className="w-full opacity-50 h-76 object-cover"
+                                        className="w-full opacity-85 h-76 object-cover"
                                     />
                                     <div className="text-center p-4">
                                         <h2 className="text-[26px] font-semibold text-gray-800">{faculty.name}</h2>
