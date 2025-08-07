@@ -3,7 +3,7 @@ import React from "react";
 const WhyCrafted = () => {
     return (
         <section className="bg-gradient-to-br from-white via-white to-teal-50 mt-24 py-24 px-4 sm:px-6">
-            <div className="max-w-7xl mx-auto text-center">
+            <div className="max-w-7xl mx-auto font-baloo text-center">
                 <h2 className="text-5xl sm:text-4xl md:text-5xl font-baloo font-semibold text-gray-900 mb-10">
                     Why Craft<span className="text-orange-500">ed.</span>
                 </h2>
@@ -17,7 +17,7 @@ const WhyCrafted = () => {
                                 <circle cx="12" cy="7" r="4" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Expert Tutors</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Expert Tutors</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             IITs, NITs, IISERs & more — Learn from those who’ve been there & done it.
                         </p>
@@ -37,7 +37,7 @@ const WhyCrafted = () => {
                                 <path d="M9.5 16H14" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Customized Study Material</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Customized Study Material</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             Topic-wise notes & problems tailored for school & entrance exams.
                         </p>
@@ -54,7 +54,7 @@ const WhyCrafted = () => {
                                 <path d="M5 18H3" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Motivation & Mentorship</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Motivation & Mentorship</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             Success sessions with achievers to guide and inspire students.
                         </p>
@@ -70,7 +70,7 @@ const WhyCrafted = () => {
                                 <rect width="7" height="5" x="3" y="16" rx="1" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Crafted Website</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Crafted Website</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             Easy access to notes, schedules, progress, and session recordings.
                         </p>
@@ -84,7 +84,7 @@ const WhyCrafted = () => {
                                 <rect x="2" y="6" width="14" height="12" rx="2" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Live & Interactive Classes</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Live & Interactive Classes</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             Real-time sessions with screen sharing, doubt-solving, and personalized attention.
                         </p>
@@ -98,7 +98,7 @@ const WhyCrafted = () => {
                                 <polyline points="12 6 12 12 8 14" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl sm:text-2xl text-gray-800">Flexible Scheduling</h3>
+                        <h3 className="text-2xl sm:text-3xl text-gray-800">Flexible Scheduling</h3>
                         <p className="text-lg sm:text-lg text-gray-600 mt-2">
                             Your learning, your time — choose slots that fit your routine.
                         </p>
