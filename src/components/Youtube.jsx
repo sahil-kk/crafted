@@ -8,7 +8,7 @@ export default function Youtube() {
                     <span className="text-orange-500">Crafted</span> YouTube Channel
                 </h2>
                 <a
-                    href="https://www.youtube.com/@yourchannel" // Replace with actual channel link
+                    href="https://www.youtube.com/@CraftedLearningHub" // Replace with actual channel link
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-orange-500 hover:bg-orange-400 text-white px-11 py-[24px] rounded-[23px] font-semibold transition"
