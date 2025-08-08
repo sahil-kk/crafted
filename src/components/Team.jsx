@@ -12,7 +12,7 @@ const Team = () => {
         const data = [
             {
                 name: "Dheeraj",
-                subject: "Physics",
+                subject: "Maths",
                 college: "Pondicherry University",
                 image_url: "/images/dheeraj.png",
             },
