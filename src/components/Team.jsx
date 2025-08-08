@@ -16,6 +16,7 @@ const Team = () => {
                 college: "Pondicherry University",
                 image_url: "/images/dheeraj.png",
             },
+
             {
                 name: "Suhail",
                 subject: "Chemistry",
@@ -32,7 +33,7 @@ const Team = () => {
                 name: "Sinan",
                 subject: "Maths",
                 college: "IIT",
-                image_url: "/images/avt.svg",
+                image_url: "/images/sinan.png",
             },
             {
                 name: "Sahil",
