@@ -74,7 +74,7 @@ const Faq = () => {
     };
 
     return (
-        <section className="ezy__faq8_k6LCwbWE py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+        <section id="faq" className="ezy__faq8_k6LCwbWE py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
             <div className="container px-16 md:px-8 lg:px-28">
                 <div className="grid grid-cols-12 justify-between gap-6">
                     <div className="col-span-12 md:col-span-5">

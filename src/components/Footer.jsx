@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-3 font-semibold font-baloo text-xl">
                         <a href="/privacy" className="text-gray-800 hover:text-orange-500 no-underline visited:text-gray-800 transition-colors duration-300">Privacy Policy</a>
                         <a href="/terms" className="text-gray-800 hover:text-orange-500 no-underline visited:text-gray-800 transition-colors duration-300">Terms & Conditions</a>
-                        <a href="/faq" className="text-gray-800 hover:text-orange-500 no-underline visited:text-gray-800 transition-colors duration-300">FAQs</a>
+                        <a href="#faq" className="text-gray-800 hover:text-orange-500 no-underline visited:text-gray-800 transition-colors duration-300">FAQs</a>
                     </div>
                 </div>
 
