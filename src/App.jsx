@@ -79,7 +79,7 @@ function App() {
             setTimeout(() => {
                 setShowPopup(true);
                 sessionStorage.setItem("popupShown", "true");
-            }, 1000);
+            }, 20000);
         }
     }, [location.pathname]);
 
