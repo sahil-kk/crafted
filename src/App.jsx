@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
 
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -32,6 +33,7 @@ function HomePage({ setShowPopup }) {
             <Testimonials />
             <Faq />
             <Footer />
+            <Analytics />
 
             {/* WhatsApp Button */}
             <a
