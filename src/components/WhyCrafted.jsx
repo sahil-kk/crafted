@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyCrafted = () => {
     return (
-        <section className="bg-gradient-to-br from-white via-white to-teal-50 mt-24 py-24 px-4 sm:px-6">
+        <section className="bg-gradient-to-br from-white via-white to-teal-50 mt-1 py-12 px-4 sm:px-6">
             <div className="max-w-7xl mx-auto font-baloo text-center">
                 <h2 className="text-5xl sm:text-4xl md:text-5xl font-baloo font-semibold text-gray-900 mb-10">
                     Why Craft<span className="text-orange-500">ed.</span>

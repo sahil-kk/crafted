@@ -32,7 +32,7 @@ const Team = () => {
             {
                 name: "Sinan",
                 subject: "Maths",
-                college: "IIT",
+                college: "IIT Kharagpur",
                 image_url: "/images/sinan.png",
             },
             {
@@ -114,7 +114,7 @@ const Team = () => {
     const restartAutoScroll = () => startAutoScroll();
 
     return (
-        <div className="relative  bg-white min-h-screen py-36 px-4">
+        <div className="relative  bg-white min-h-screen py-32 px-4">
 
             <svg
                 viewBox="0 0 200 200"
