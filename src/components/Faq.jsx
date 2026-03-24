@@ -84,8 +84,8 @@ const Faq = () => {
                         <p className="text-xl text-black opacity-70">
                             Got questions about your board exams or JEE/NEET prep? We’ve answered some of the most common doubts to help you get started with confidence at Crafted.
                         </p>
-                        <button className="bg-transparent font-monospace border-2 border-black text-orange-500 hover:bg-orange-500 hover:text-black font-semibold rounded transition-colors duration-300 mt-6 lg:mt-12 px-7 py-3">
-                            Let’s Connect
+                        <button className="bg-orange-500 text-2xl rounded-3xl font-baloo border-2  text-white hover:bg-orange-500 hover:text-black font-semibold transition-colors duration-300 mt-6 lg:mt-12 px-7 py-3">
+                            Join Now
                         </button>
                     </div>
                     <div className="col-span-12 text-black text-lg md:col-span-6 md:col-start-7">

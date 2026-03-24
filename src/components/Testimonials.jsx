@@ -23,23 +23,6 @@ const testimonials = [
         role: "Class 10",
         text: "I got a perfect mentor too..",
     },
-    {
-        name: "Anakha",
-        role: "Class 11",
-        text: "Now, I am pretty confident with my topics.",
-    },
-    {
-        name: "Emin",
-        role: "Class 9",
-        text: "I am really happy to attend classes of faculties from IITs and NITs.",
-    },
-    {
-        name: "Aswin",
-        role: "Class 12",
-        text: "Thank you, Crafted. My friend suggested you. I am very happy with the classes. Every student\n" +
-            "should get classes like this. Focusing on concepts rather than covering portions. Thank you\n" +
-            "again.",
-    },
 ];
 
 const Testimonials = () => {
