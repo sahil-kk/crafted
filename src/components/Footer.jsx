@@ -46,7 +46,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/company/crafted-learning-hub/" target="_blank" rel="noopener noreferrer">
                             <img src="/images/linkedin.svg" alt="LinkedIn" className="w-10 h-10 opacity-50 hover:scale-110 transition-transform duration-300" />
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/@CraftedLearningHub" target="_blank" rel="noopener noreferrer">
                             <img src="/images/youtube.svg" alt="YouTube" className="w-10 h-10 opacity-50 hover:scale-110 transition-transform duration-300" />
                         </a>
                         <a href="https://www.facebook.com/people/CraftedLearningHub/61576321487598/" target="_blank" rel="noopener noreferrer">
