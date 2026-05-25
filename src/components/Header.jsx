@@ -12,8 +12,12 @@ export default function Header({ onJoinClick }) {
     }, []);
 
     const handleScrollTo = (id) => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (window.location.pathname !== '/') {
+            window.location.href = `/#${id}`;
+        } else {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
         setIsMenuOpen(false);
     };
 
@@ -32,8 +36,8 @@ export default function Header({ onJoinClick }) {
                 {/* Desktop Nav */}
                 <nav className="hidden font-baloo text-xl md:flex space-x-6 items-center">
                     <button onClick={() => handleScrollTo('hero')} className="text-gray-700 hover:text-orange-600">Home</button>
-                    <a href="#courses" className="text-gray-700 hover:text-orange-600">Courses</a>
-                    <a href="#team" className="text-gray-700 hover:text-orange-600">Our Team</a>
+                    <button onClick={() => handleScrollTo('courses')} className="text-gray-700 hover:text-orange-600">Courses</button>
+                    <button onClick={() => handleScrollTo('team')} className="text-gray-700 hover:text-orange-600">Our Team</button>
                     <button
                         onClick={onJoinClick}
                         className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-full transition"
@@ -53,9 +57,9 @@ export default function Header({ onJoinClick }) {
             {/* Mobile Nav */}
             {isMenuOpen && (
                 <div className="md:hidden text-center mt-4 px-6 pb-4 space-y-4">
-                    <a href="#hero" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Home</a>
-                    <a href="#courses" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Courses</a>
-                    <a href="#team" onClick={() => setIsMenuOpen(false)} className="block text-gray-700 hover:text-orange-600">Our Team</a>
+                    <button onClick={() => handleScrollTo('hero')} className="block w-full text-gray-700 hover:text-orange-600">Home</button>
+                    <button onClick={() => handleScrollTo('courses')} className="block w-full text-gray-700 hover:text-orange-600">Courses</button>
+                    <button onClick={() => handleScrollTo('team')} className="block w-full text-gray-700 hover:text-orange-600">Our Team</button>
                     <button
                         onClick={() => {
                             setIsMenuOpen(false);
